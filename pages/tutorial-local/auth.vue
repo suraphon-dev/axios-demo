@@ -32,6 +32,7 @@ export default {
     },
     methods: {
         logoutForm() {
+            alert('logout success') // แจ้งเตือนล็อกเอ้าส์สำเร็จ
             localStorage.removeItem('auth') // คำสั่ง ลบข้อมูลใน local storage 
             this.$router.push('/tutorial-local') // คำสั่ง redirect
         }

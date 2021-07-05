@@ -34,10 +34,6 @@ export default {
         }
     },
     methods: {
-        resetForm() {
-            this.username = ''
-            this.password = ''
-        },
         submitForm() {
             // if username, password ตรงกับข้อมูลที่่เรา mockup userInfo
             if (this.username == this.userInfo.username && this.password == this.userInfo.password) {
@@ -45,10 +41,14 @@ export default {
                 localStorage.setItem('auth', JSON.stringify(this.userInfo)) // นำข้อมูลเก็บไว้ที่ local storage
                 this.$router.push('/tutorial-local/auth') // redirect ไปยังหน้าที่ต้องการ
             } else {
-                // else ถ้าเงื่อนไขไม่ตรง 
+                // else ถ้าเงื่อนไขไม่ตรง
                 alert('error login') // แจ้งเตือนล็อกอินไม่สำเร็จ
                 this.resetForm() // call function เคียค่า username, password
             }
+        },
+        resetForm() {
+            this.username = ''
+            this.password = ''
         }
     }
 }
